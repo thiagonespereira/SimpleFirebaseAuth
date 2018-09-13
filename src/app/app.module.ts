@@ -13,6 +13,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { firebaseConfig } from '../config/firebase.config';
 import { AuthService } from '../services/auth.service';
 import { NgxErrorsModule } from '@ultimate/ngxerrors';
+import { SignupPageModule } from '../pages/signup/signup.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { NgxErrorsModule } from '@ultimate/ngxerrors';
   ],
   imports: [
     BrowserModule,
+    SignupPageModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig.fire),
     NgxErrorsModule
