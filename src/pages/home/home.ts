@@ -13,16 +13,12 @@ export class HomePage {
 
   }
 
-  //--------------------
-
   login() {
-    // this.menu.close();
     this.auth.signOut();
     this.navCtrl.setRoot(LoginPage);
   }
 
   logout() {
-    // this.menu.close();
     this.auth.signOut();
     this.navCtrl.setRoot(HomePage);
   }

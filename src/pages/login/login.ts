@@ -5,13 +5,6 @@ import { HomePage } from '../home/home';
 import { AuthService } from '../../services/auth.service';
 import { SignupPage } from '../signup/signup';
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-login',
