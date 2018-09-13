@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AuthService } from '../../services/auth.service';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +9,21 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private auth: AuthService) {
 
   }
 
+  //--------------------
+
+  login() {
+    // this.menu.close();
+    this.auth.signOut();
+    this.navCtrl.setRoot(LoginPage);
+  }
+
+  logout() {
+    // this.menu.close();
+    this.auth.signOut();
+    this.navCtrl.setRoot(HomePage);
+  }
 }

@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 // import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth.service';
+import { HomePage } from '../pages/home/home';
 
 @Component({
   templateUrl: 'app.html'
@@ -19,6 +20,26 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+
+  initializeApp() {
+    // this.platform.ready().then(() => {
+    //   this.statusBar.styleDefault();
+    // });
+  
+    this.auth.afAuth.authState
+      .subscribe(
+        user => {
+          if (user) {
+            this.rootPage = HomePage;
+          } else {
+            this.rootPage = LoginPage;
+          }
+        },
+        () => {
+          this.rootPage = LoginPage;
+        }
+      );
   }
 }
 

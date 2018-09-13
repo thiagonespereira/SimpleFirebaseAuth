@@ -6,7 +6,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { LoginPage } from '../pages/login/login';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -14,17 +13,18 @@ import { firebaseConfig } from '../config/firebase.config';
 import { AuthService } from '../services/auth.service';
 import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { SignupPageModule } from '../pages/signup/signup.module';
+import { LoginPageModule } from '../pages/login/login.module';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    LoginPage
+    HomePage
   ],
   imports: [
     BrowserModule,
     SignupPageModule,
+    LoginPageModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig.fire),
     NgxErrorsModule
@@ -32,8 +32,7 @@ import { SignupPageModule } from '../pages/signup/signup.module';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    LoginPage
+    HomePage
   ],
   providers: [
     StatusBar,
